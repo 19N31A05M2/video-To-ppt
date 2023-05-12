@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+      body {
+  margin:0;
+  padding:0;
+  font-family: "Lato", sans-serif; 
+  background: -webkit-linear-gradient(to right, #514A9D, #24C6DC); 
+  background: linear-gradient(to right, #514A9D, #24C6DC);  
+  
+} 
+section .row{
+  margin-bottom: 10px;
+  background: #E9F0FF;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .row i{
+  color: #6990F2;
+  font-size: 30px;
+}
+section .details span{
+  font-size: 14px;
+}
+.progress-area .row .content{
+  width: 100%;
+  margin-left: 15px;
+}
+.progress-area .details{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.progress-area .content .progress-bar{
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+.content .progress-bar .progress{
+  height: 100%;
+  width: 0%;
+  background: #6990F2;
+  border-radius: inherit;
+}
+.uploaded-area{
+  max-height: 232px;
+  overflow-y: scroll;
+}
+.uploaded-area.onprogress{
+  max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+  width: 0px;
+}
+.uploaded-area .row .content{
+  display: flex;
+  align-items: center;
+}
+.uploaded-area .row .details{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.uploaded-area .row .details .size{
+  color: #404040;
+  font-size: 11px;
+}
+.uploaded-area i.fa-check{
+  font-size: 16px;
+}
+    </style>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          Video to PPT
+        </a>
+      </div>
+    </nav>
+    <h1 class="text-center mt-5">Video To PPT converter</h1>
+    <div class="container">
+      <div class="row  text-center">
+        <div class="col-md-4 mx-auto my-auto">
+          <div class="card h-100 ">
+          <img src="https://www.horusmusic.global/wp-content/uploads/2017/12/promotional-video.png" class="card-img-top" alt="..." width="100%" height="300px">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Video Uploader</h5>
+            <hr>
+             <form method="post" id="export_excel" enctype="multipart/form-data" action="/func">  
+              <div class="row g-3 align-items-center">
+                
+                <div class="col-auto">
+                  <label for="inputPassword6" class="col-form-label fs-4">Upload Video:</label>
+                </div>
+                <div class="input-group col-auto">
+                  <input type="file" name="excel_file" id="excel_file" class="form-control" accept=".mp4" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                  
+                </div>
+                <div class="input-group col-auto text-center">
+                  <input type="submit" id='export' class="btn btn-primary mx-auto" value="Upload">
+                </div>
+                
+              </div>
+            </form> 
+          </div>
+          </div>
+        </div>
+        <div class="col-md-4 mx-auto studentcard">
+          <div class="card h-100 ">
+            <img src="https://media.istockphoto.com/vectors/download-ppt-icon-file-with-ppt-label-and-down-arrow-sign-file-vector-id842972574?k=20&m=842972574&s=612x612&w=0&h=-IrJv22nsXJxQkUPvpIgKLacE8Fkqx5lKKcFGWCr7rQ=" class="card-img-top" width="100%" height="300px" >
+            <div class="card-body">
+              <h5 class="card-title text-primary">PPT Extracter</h5>
+              <hr>
+              <div class="text">
+                <section class="progress-area"></section>
+                <section class="uploaded-area">
+                  <li class="row">
+                    <div class="content upload">
+                      <i class="fas fa-file-alt"></i>
+                      <div class="details">
+                        <span class="name">Final.pptx</span>
+                        <span class="size">3MB</span>
+                      </div>
+                    </div>
+                    <i class="fas fa-check"></i>
+                  </li>
+                </section>
+              </div>
+              <div class="input-group col-auto">
+                <a href="../final.pptx" download>
+                <button type="button" id='addstudent' class="btn btn-primary mx-auto"   data-bs-toggle="modal" data-bs-target="#exampleModal">Download</button>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
